@@ -1,6 +1,5 @@
-class NightWriter
 
-  def message
-    puts "Created 'braille.txt' containing 256 characters"
-  end
-end
+input_array = ARGV
+
+puts input_array.length
+puts "Created 'braille.txt' containing 256 characters"
