@@ -1,8 +1,11 @@
 
 input_array = ARGV
 
-translated_message = File.write("#{input_array[1]}", ARGF.readlines)
+original_message = File.read("#{input_array[0]}").split(//)
+translated_message = File.open("#{input_array[1]}", "w")
 
-p translated_message
 
-puts "Created '#{input_array[1]}' containing 256 characters"
+
+p original_message
+
+puts "Created '#{input_array[1]}' containing #{original_message.length} characters"
