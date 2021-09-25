@@ -2,7 +2,7 @@ require './lib/dictionary'
 
 describe Dictionary do
   before (:each) do
-    @dictionary = Dictionary.new(attribute)
+    @dictionary = Dictionary.new
   end
 
   it 'exists' do

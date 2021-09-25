@@ -1,9 +1,4 @@
 class Dictionary
-  attr_reader :message
-
-  def initialize(message)
-    @message = message
-  end
 
   def top
     top_line = {

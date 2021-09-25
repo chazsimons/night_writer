@@ -1,10 +1,9 @@
-require './lib/nightwriter_class'
+require './lib/night_writer'
 require './lib/dictionary'
 
 describe NightWriter do
   before (:each) do
-    arguments = ['message.txt', 'braille.txt']
-    @message = NightWriter.new(arguments)
+    @message = NightWriter.new
   end
 
   it 'exists' do

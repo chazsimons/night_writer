@@ -1,4 +1,6 @@
 require './lib/dictionary'
+require './lib/file_reader'
+require './lib/file_writer'
 
 class NightWriter
 
@@ -8,9 +10,11 @@ class NightWriter
     @writer = FileWriter.new
   end
 
+  def created_new_file
+    puts "Created '#{@writer}' containing #{@reader.length} characters"
+  end
+
   def breakdown
     @reader.new.split(//)
   end
-
-  
 end
