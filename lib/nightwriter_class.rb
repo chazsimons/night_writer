@@ -9,6 +9,10 @@ class NightWriter
   def breakdown
     @original_message.split(//)
   end
+
+  def creation_message
+    puts "Created '#{@translated_message}' containing #{@original_message.length} characters"
+  end
   #
   # File.write("#{arguments[1]}", original_message)
   #

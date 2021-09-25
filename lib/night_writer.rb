@@ -1,6 +1,4 @@
 require './lib/dictionary'
-require './lib/file_reader'
-require './lib/file_writer'
 
 dictionary = Dictionary.new
 
@@ -12,11 +10,11 @@ puts "Created '#{inputs[1]}' containing #{original_message.length} characters"
 
 array = original_message.split(//)
 
-top_line = []
+top_line    = []
 middle_line = []
 bottom_line = []
 
-braille = array.each do |character|
+array.each do |character|
   if character == " "
     top_line << "  "
     middle_line << "  "
@@ -29,14 +27,12 @@ braille = array.each do |character|
     dictionary.bottom.keys.include?(character)
       bottom_line << dictionary.bottom[character]
   end
-  top_line.join
-  middle_line.join
-  bottom_line.join
 end
 
 
-translated_message = File.write("#{inputs[1]}", braille)#this is where the braille message goes)
 
+
+translated_message = File.write("#{inputs[1]}", "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}")
 # class NightWriter
 #
 #   def initialize

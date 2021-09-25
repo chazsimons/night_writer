@@ -1,4 +1,4 @@
-require './lib/night_writer'
+require './lib/nightwriter_class'
 require './lib/dictionary'
 
 describe NightWriter do
@@ -9,4 +9,5 @@ describe NightWriter do
   it 'exists' do
     expect(@message).to be_an_instance_of(NightWriter)
   end
+
 end
