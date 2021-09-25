@@ -1,7 +1,11 @@
 class Translator
-
+  attr_reader :message,
+              :new_message,
+              :top_line,
+              :middle_line,
+              :bottom_line
   def initialize(message, path)
-    @message     = message.split(//)
+    @message     = message.chomp.split(//)
     @new_message = path
     @dictionary  = Dictionary.new
     @top_line    = []
@@ -29,6 +33,10 @@ class Translator
   end
 
   def write
-     File.write("#{@new_message}", "#{@top_line.join}\n#{@middle_line.join}\n#{@bottom_line.join}", mode: 'a')
+     File.write("#{@new_message}", "#{@top_line.join}\n#{@middle_line.join}\n#{@bottom_line.join}")
+  end
+
+  def length_check
+    @top_line
   end
 end

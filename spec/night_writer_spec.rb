@@ -1,4 +1,4 @@
-require './lib/nightwriter_class'
+require './lib/night_writer'
 require './lib/dictionary'
 
 describe NightWriter do
@@ -10,12 +10,13 @@ describe NightWriter do
     expect(@message).to be_an_instance_of(NightWriter)
   end
 
-  xit 'can print a message' do
-    expect(@message.creation_message).to eq("Created '#{'braille.txt'}' containing #{'original_message.txt'.length} characters")
+  it 'has readable attributes' do
+    expect(@message.in_file).to be_a(String)
+    # expect(@message.out_file).to be_a(ARGV)
   end
 
-  it 'can split a message into an array' do
-    expect(@message.breakdown).to be_an(Array)
-    expect(@message.breakdown.count).to eq(13)
+  it 'can print a message' do
+    expect(@message.creation_message).to eq("Created 'braille.txt' containing 16 characters")
   end
+
 end
