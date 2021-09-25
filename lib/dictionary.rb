@@ -27,7 +27,8 @@ class Dictionary
     'j' => '.O',
     's' => '.O',
     't' => '.O',
-    'w' => '.O'
+    'w' => '.O',
+    'capital' => '..'
     }
   end
 
@@ -57,7 +58,8 @@ class Dictionary
    'q' => 'OO',
    'r' => 'OO',
    't' => 'OO',
-   'w' => 'OO'
+   'w' => 'OO',
+   'capital' => '..'
    }
   end
 
@@ -88,7 +90,8 @@ class Dictionary
    'x' => 'OO',
    'y' => 'OO',
    'z' => 'OO',
-   'w' => '.O'
+   'w' => '.O',
+   'capital' => '.O'
    }
   end
 end

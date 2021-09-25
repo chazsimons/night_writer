@@ -19,6 +19,10 @@ array.each do |character|
     top_line << "  "
     middle_line << "  "
     bottom_line << "  "
+  elsif character == character.upcase
+    top_line << dictionary.top['capital']
+    middle_line << dictionary.middle['capital']
+    bottom_line << dictionary.bottom['capital']
   else
     dictionary.top.keys.include?(character)
       top_line    << dictionary.top[character]
@@ -28,8 +32,6 @@ array.each do |character|
       bottom_line << dictionary.bottom[character]
   end
 end
-
-
 
 
 translated_message = File.write("#{inputs[1]}", "#{top_line.join}\n#{middle_line.join}\n#{bottom_line.join}")
