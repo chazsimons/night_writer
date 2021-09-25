@@ -1,9 +1,9 @@
 class NightWriter
 
-  def initialize(incoming, translated)
-    @dictionary = Dictionary.new
-    @original_message = File.read("#{incoming}")
-    @translated_message =   File.open("#{translated}", "w")
+  def initialize
+    @dictionary         = Dictionary.new
+    @original_message   = File.read(ARGV[0])
+    @translated_message = File.open(ARGV[1], "w")
   end
 
   def breakdown
@@ -11,7 +11,10 @@ class NightWriter
   end
 
   def creation_message
-    puts "Created '#{@translated_message}' containing #{@original_message.length} characters"
+     "Created '#{@translated_message}' containing #{@original_message.length} characters"
+  end
+
+  def translate
   end
   #
   # File.write("#{arguments[1]}", original_message)
