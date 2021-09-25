@@ -14,6 +14,7 @@ send incoming message array to braille class
 
 
 braille alphabet hash: key = english letter, value = braille equiv
+break it into lines
 
 make incoming message an array with split
 
