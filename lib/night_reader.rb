@@ -15,7 +15,12 @@ class NightReader
      "Created '#{@out_file}' containing #{@in_file.length} characters"
   end
 
+  def character_count
+    @in_file.length
+  end
+
   def translate
+    @to_english.string_screen
     @to_english.to_english
     @to_english.write
   end
