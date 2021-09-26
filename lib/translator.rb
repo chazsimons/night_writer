@@ -33,11 +33,7 @@ class Translator
   end
 
   def write
-    if @top_line.length <= 40
       File.write("#{@new_message}", "#{@top_line.join}\n#{@middle_line.join}\n#{@bottom_line.join}")
-    else
-      split_up
-    end
   end
 
   def split_up
@@ -46,5 +42,30 @@ class Translator
     bottom2 = @bottom_line[40..80]
     File.write("#{@new_message}", "#{@top_line[0..39].join}\n#{@middle_line[0..39].join}\n#{@bottom_line[0..39].join}\n")
     File.write("#{@new_message}", "#{top2.join}\n#{middle2.join}\n#{bottom2.join}", mode: 'a')
+  end
+
+  def string_screen
+    chop = @in_file.scan(/.{1,80}/m)
+    require "pry"; binding.pry
+    @top_line    = chop[0].chars.each_slice(2).map(&:join)
+    @middle_line = chop[1].chars.each_slice(2).map(&:join)
+    @bottom_line = chop[2].chars.each_slice(2).map(&:join)
+  end
+
+  def to_english
+    assembly
+    #iterate through each line array, compare them vertically by index positions
+  end
+
+  def assembly
+    @top_line.map do |pair|
+      @dictionary.b_e_top[pair]
+    end
+    @middle_line.map do |pair|
+      @dictionary.b_e_middle[pair]
+    end
+    @bottom_line.map do |pair|
+      @dictionary.b_e_bottom[pair]
+    end
   end
 end
