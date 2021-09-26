@@ -16,6 +16,9 @@ describe Dictionary do
   end
 
   it 'can return a key by its value' do
-
+    expect(@dictionary.top.key('O.')).to eq('a')
+    expect(@dictionary.middle.key('OO')).to eq('g')
+    expect(@dictionary.bottom.key('OO')).to eq('u')
+    expect(@dictionary.bottom.key('.O')).to eq('w')
   end
 end
