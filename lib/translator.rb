@@ -47,4 +47,9 @@ class Translator
     File.write("#{@new_message}", "#{@top_line[0..39].join}\n#{@middle_line[0..39].join}\n#{@bottom_line[0..39].join}\n")
     File.write("#{@new_message}", "#{top2.join}\n#{middle2.join}\n#{bottom2.join}", mode: 'a')
   end
+
+  def to_english
+
+
+  end
 end
