@@ -1,5 +1,6 @@
+require 'simplecov'
+SimpleCov.start
 require './lib/translator'
-require './lib/dictionary'
 
 describe Translator do
   before(:each) do
@@ -24,8 +25,17 @@ describe Translator do
 
   it 'can translate to braille' do
     @translator.to_braille
-    expect(@translator.top_line.join).to eq('...O...OO..OOOO....O.O...OO.O.O..O')
-    expect(@translator.middle_line.join).to eq('..O...OOOOO..O....O.OO..OO.OOO..O.')
-    expect(@translator.bottom_line.join).to eq('.O....O.....O.O.....O....OO.O.O.O.')
+    expect(@translator.top_line.join).to eq('...0...00..0000....0.0...00.0.0..0')
+    expect(@translator.middle_line.join).to eq('..0...00000..0....0.00..00.000..0.')
+    expect(@translator.bottom_line.join).to eq('.0....0.....0.0.....0....00.0.0.0.')
+  end
+
+  it 'can write to the expected file path' do
+    expect(@translator.write).to eq("I think it works")
+  end
+
+  it 'can translate to english' do
+    @translator.to_english
+    expect(@translator).to be_an_instance_of(Translator)
   end
 end

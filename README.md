@@ -2,25 +2,8 @@
 
 Find the brief at [https://backend.turing.edu/module1/projects/night_writer/]
 
-Argv to read files coming in?
-  - file name should be dynamic, not hardcoded
-  - takes txt, returns txt
-Takes a message from english and converts it to braille
-Takes braille message and converts back to english
-Needs to return the message:
-'Created #{new_message.txt} containing #{character_count} characters.'
+Final solo project for Module 1.
 
-send incoming message array to braille class
+It can take 2 file arguments from the command line, and translate the contents from the first file into braille. It will write it to the second file given.
 
-
-braille alphabet hash: key = english letter, value = braille equiv
-break it into lines
-
-make incoming message an array with split
-
-iterate over incoming message.
-  braille_message = []
-  incoming_message.each do |character|
-    braille_message << braille[character]
-  end
-  braille_message.join
+It can also do the reverse, and translate braille back to english.

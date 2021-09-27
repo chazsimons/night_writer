@@ -1,9 +1,15 @@
+require 'simplecov'
+SimpleCov.start
 require './lib/night_reader'
 require './lib/dictionary'
 
 describe NightReader do
   before(:each) do
     @reader = NightReader.new
+    allow(@reader).to receive(:in_file).and_return('...0...00..0000....0.0...00.0.0..0
+    ..0...00000..0....0.00..00.000..0.
+    .0....0.....0.0.....0....00.0.0.0.')
+    allow(@reader).to receive(:out_file).and_return('new_message.txt')
   end
 
   it 'exists' do
@@ -15,6 +21,11 @@ describe NightReader do
   end
 
   it 'can display a message' do
-    expect(@reader.creation_message).to eq("Created 'original_message.txt' containing 8 characters")
+    allow(@reader).to receive(:in_file).and_return('...0...00..0000....0.0...00.0.0..0
+    ..0...00000..0....0.00..00.000..0.
+    .0....0.....0.0.....0....00.0.0.0.')
+    allow(@reader).to receive(:out_file).and_return('new_message.txt')
+
+    expect(@reader.creation_message).to eq("Created 'new_message.txt' containing 112 characters")
   end
 end
