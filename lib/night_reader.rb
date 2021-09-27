@@ -20,11 +20,12 @@ class NightReader
   end
 
   def translate
-    @to_english.string_screen
     @to_english.to_english
-    @to_english.write
+    # @to_english.new_message
   end
 end
 
 test = NightReader.new
 p test.creation_message
+
+test.translate

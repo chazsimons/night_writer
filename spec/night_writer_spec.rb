@@ -19,4 +19,10 @@ describe NightWriter do
     expect(@message.creation_message).to eq("Created 'braille.txt' containing 16 characters")
   end
 
+  it 'can translate a message' do
+    results = @message.translate
+    expect(results).to eq('...0..0.0.000....0.0...00.0.0..0
+    ..0...00.00..0..0.00..00.000..0.
+    .0......0.0.......0....00.0.0.0.')
+  end
 end
