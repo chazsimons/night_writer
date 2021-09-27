@@ -48,8 +48,8 @@ class Translator
   end
 
   def to_english
-    triples  = @message.join.scan(/../)
-    segments = triples.each_slice(3).to_a.transpose
+    string      = @message.join.scan(/../)
+    segments    = string.each_slice(string.length / 3).to_a.transpose
     translation = []
     segments.each do |segment|
       translation << @dictionary.braille_to_english[segment]

@@ -12,7 +12,7 @@ class NightReader
   end
 
   def creation_message
-     "Created '#{@out_file}' containing #{@in_file.length} characters"
+     "Created '#{@out_file}' containing #{(@in_file.length / 2)} characters"
   end
 
   def character_count
@@ -21,7 +21,6 @@ class NightReader
 
   def translate
     @to_english.to_english
-    # @to_english.new_message
   end
 end
 
