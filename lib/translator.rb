@@ -48,9 +48,12 @@ class Translator
   end
 
   def to_english
-    pairs = @message.join.scan(/../)
+    triples  = @message.join.scan(/../)
+    segments = triples.each_slice(3).to_a.transpose
     translation = []
-    translation << @dictionary.braille_to_english[pairs]
+    segments.each do |segment|
+      translation << @dictionary.braille_to_english[segment]
+    end
     File.write("#{@new_message}", translation.join)
   end
 end
