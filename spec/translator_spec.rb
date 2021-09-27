@@ -12,7 +12,7 @@ describe Translator do
 
   it 'has attributes' do
     expect(@translator.message).to be_an(Array)
-    expect(@translator.message.count).to eq(16)
+    expect(@translator.message.length).to eq(16)
     expect(@translator.new_message).to eq('happy.txt')
   end
 
