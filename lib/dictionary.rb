@@ -1,4 +1,4 @@
-class Dictionary
+module Dictionary
   def top
    {
     'a' => '0.',
